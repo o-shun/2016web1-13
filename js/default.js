@@ -1,11 +1,9 @@
 var separate_time = function(time){
-  var sec   = time.getSeconds();
-  var min   = time.getMinutes();
-  var hours = time.getHours();
-  var days  = time.getDate();
-  var month = time.getMonth();
-  var year  = time.getFullYear();
-  return [sec, min, hours, days, month, year];
+  var sec   = ((time / 1000) % 60);
+  var min   = ((time / 1000 / 60) % 60);
+  var hours = ((time / 1000 / 60 / 60) % 24);
+  var days  = ( time / 1000 / 60 / 60 / 24);
+  return [sec, min, hours, days];
 }
 
 var update = function(){
@@ -14,8 +12,7 @@ var update = function(){
   var diff = target.getTime() - now.getTime();
   var counter = separate_time(diff);
   document.getElementById('countdown').textContent =
-    counter[5] + '年' +
-    counter[4] + '月' +
+    '東京オリンピックまであと'
     counter[3] + '日' +
     counter[2] + '時' +
     counter[1] + '分' +
