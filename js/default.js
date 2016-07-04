@@ -21,3 +21,8 @@ var update = function(){
     counter[0] + '秒' ;
   refresh();
 }
+
+var refresh= function(){
+  setTimeout(update, 1000);
+}
+update();
