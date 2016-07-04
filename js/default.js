@@ -12,7 +12,7 @@ var update = function(){
   var diff = target.getTime() - now.getTime();
   var counter = separate_time(diff);
   document.getElementById('countdown').textContent =
-    '東京オリンピックまであと'
+    '東京オリンピックまであと' +
     counter[3] + '日' +
     counter[2] + '時' +
     counter[1] + '分' +
