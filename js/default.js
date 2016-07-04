@@ -1,8 +1,8 @@
 var separate_time = function(time){
-  var sec   = ((time / 1000) % 60);
-  var min   = ((time / 1000 / 60) % 60);
-  var hours = ((time / 1000 / 60 / 60) % 24);
-  var days  = ( time / 1000 / 60 / 60 / 24);
+  var sec   = Math.floor((time / 1000) % 60);
+  var min   = Math.floor((time / 1000 / 60) % 60);
+  var hours = Math.floor((time / 1000 / 60 / 60) % 24);
+  var days  = Math.floor( time / 1000 / 60 / 60 / 24);
   return [sec, min, hours, days];
 }
 
