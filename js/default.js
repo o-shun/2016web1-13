@@ -28,3 +28,20 @@ update();
 document.getElementById('form').select.onchange = function(){
   location.href = document.getElementById('form').select.value;
 }
+
+function getFileName(){
+ return window.location.split('/').pop(); 
+}
+
+var filename = getFileName();
+var opt;
+if(filename === 'other.html'){
+  opt = document.querySelector('option[value="other.html"]');
+}else{
+  opt = document/querySelector('option[value="index.html"]');
+}
+opt.slected = true;
+
+document.getElementById('form').select.onchange = function(){
+  location.href = document.getElementById('form').select.value;
+}
