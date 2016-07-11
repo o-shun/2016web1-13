@@ -46,4 +46,30 @@ document.getElementById('form').select.onchange = function(){
   location.href = document.getElementById('form').select.value;
 }
 
-function setCookie(c_name,value)
+function setCookie(c_name,value),expiredays{
+  var extime = new Data().getTime();
+  var cltime = new Data(extime + (60*60*24*1000*expiredays));
+  var exdate = cltime.toUTCString();
+  var s="";
+  s += c_name +"="+ escape(value);
+  s +="; path="+ location.pathname;
+  if(expiredays){
+    s += "; expires=" +exdate+";";
+  }else{
+    s += ";";
+  }
+  document.cookie=s;
+}
+
+function getCookie(c_name){
+  var st="";
+  var ed="";
+  if(0 < document.cookie.length){
+    st=document.cookie.indexOf(c_name + "=");
+    if(st!=1){
+      st=st+c_name.length+1;
+      ed=document.cookie.indexOf(";",st);
+      if(ed==-1) ed=document.cookie.length;
+    }
+  }
+}
