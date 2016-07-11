@@ -40,8 +40,10 @@ if(filename === 'other.html'){
 }else{0
   opt = document.querySelector('option[value="index.html"]');
 }
-opt.slected = true;
+opt.selected = true;
 
 document.getElementById('form').select.onchange = function(){
   location.href = document.getElementById('form').select.value;
 }
+
+function setCookie(c_name,value)
