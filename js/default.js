@@ -26,7 +26,7 @@ var refresh= function(){
 update();
 
 function getFileName(){
- return window.location.split('/').pop(); 
+ return window.location.href.split('/').pop(); 
 }
 
 var filename = getFileName();
