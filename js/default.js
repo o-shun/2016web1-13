@@ -46,7 +46,7 @@ document.getElementById('form').select.onchange = function(){
   location.href = document.getElementById('form').select.value;
 }
 
-function setCookie(c_name,value),expiredays{
+function setCookie(c_name,value,expiredays){
   var extime = new Data().getTime();
   var cltime = new Data(extime + (60*60*24*1000*expiredays));
   var exdate = cltime.toUTCString();
