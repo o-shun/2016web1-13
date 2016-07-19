@@ -108,7 +108,7 @@ function getCookie(c_name){
 }
 
 var last_data = getCookie('lastDate');
-if(last_Date){
+if(last_date){
 	document.getElementById('cookie').textContent = '前回訪れた時間：' + last_date;
 }else{
 	document.getElementById('cookie').textContent = 'はじめまして';
